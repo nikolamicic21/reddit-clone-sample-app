@@ -1,0 +1,26 @@
+<div class="container" *ngIf="userProfileModel$ | async as userProfileModel">
+  <div>
+    Welcome <b>{{ username }}</b
+    >.<br />
+    You have posted <b>{{ userProfileModel.posts.length }}</b> time(s) and
+    commented <b>{{ userProfileModel.comments.length }}</b> time(s). You can
+    check your post and comment history below.
+  </div>
+  <hr />
+  <div>Your Posts:</div>
+  <app-post-tile [posts]="userProfileModel.posts"></app-post-tile>
+  <hr />
+  <div>Your Comments:</div>
+  <div *ngFor="let comment of userProfileModel.comments">
+    <div class="comment">
+      <!--      <div class="username">-->
+      <!--        <a routerLink="/user/comment.username">{{ comment.userName }}</a>-->
+      <!--      </div>-->
+      <div>
+        <p>{{ comment.createdDate }}</p>
+      </div>
+      <b>{{ comment.text }}</b>
+    </div>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex flex-column vote-box">
+  <div class="p-2">
+    <fa-icon
+      (click)="upVotePost()"
+      class="up-vote"
+      [icon]="faArrowUp"
+    ></fa-icon>
+    <!--    [style.color]="post.upVote ? 'green' : ''"-->
+  </div>
+  <div class="p-2 vote-count">{{ post?.voteCount }}</div>
+  <div class="p-2">
+    <fa-icon
+      (click)="downVotePost()"
+      class="down-vote"
+      [icon]="faArrowDown"
+    ></fa-icon>
+    <!--    [style.color]="post.downVote ? 'red' : ''"-->
+  </div>
+</div>

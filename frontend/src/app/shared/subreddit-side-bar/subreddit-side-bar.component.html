@@ -1,0 +1,15 @@
+<div class="sidebar-view-subreddit">
+  <div style="color: black; font-weight: bold">Browse Subreddits</div>
+  <hr />
+  <span *ngFor="let subreddit of subReddits$ | async">
+    <span class="subreddit-text"
+      ><a href="/view-subreddit/{{ subreddit.name }}">{{
+        subreddit.name
+      }}</a></span
+    >
+    <hr />
+  </span>
+  <div style="text-align: center" *ngIf="displayAll$ | async">
+    <a style="font-weight: bold" routerLink="/list-subreddit">View All</a>
+  </div>
+</div>
